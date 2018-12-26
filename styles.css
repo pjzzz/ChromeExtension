@@ -1,5 +1,10 @@
 
-body{
+/* body{
     background: #070606 !important;
     color:  #a79a9a !important;
-}
+} 
+    changes by content script and clicking on the button in menubar using 
+    background script and chrome APIs which include
+    chrome.browserAction.onClicked.addListener(functionName)
+    chorme.tabs.sendMessage and also receving api 
+*/
