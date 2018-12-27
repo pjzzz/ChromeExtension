@@ -10,8 +10,8 @@ function extensionRun(message, sender, sendResponse){
     if( message.id === '100' ){
         let body = document.getElementsByTagName('body');
         for(by of body){
-            by.style['background'] = '#000000 !important';
-            by.style['color'] = ' #ffffff !important';
+            by.style['background'] = '#000000';
+            by.style['color'] = ' #ffffff';
         }
         let paras = document.getElementsByTagName('p');
         for(p of paras){
