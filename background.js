@@ -1,11 +1,17 @@
 console.log('Background script running!!');
 
 chrome.browserAction.onClicked.addListener(buttonClicked);
+let extensionRun1 = 0;
 
 function buttonClicked(tab){
     console.log(tab);
-    let extensionRun1 = {
-        id: '100'
+    let swtch = {
+        turn: "on"
     };
-    chrome.tabs.sendMessage(tab.id, extensionRun1);
+    if(extensionRun1%2 === 1){
+        console.log(extensionRun1);
+        swtch.turn = "off";
+    }
+    chrome.tabs.sendMessage(tab.id, swtch);
+    extensionRun1+=1;
 }
