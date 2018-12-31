@@ -9,8 +9,16 @@ let paras = document.getElementsByTagName('p');
 let tb = body, tp = paras;
 
 function extensionRun(message, sender, sendResponse){
-    console.log(message.id);
+    /* if(body[0].style['background'] != 'rbg(0, 0, 0)')
+    {
+        console.log('why??');
+        message.turn = 'on';
+    }else{
+        console.log(message.turn);
+        message.turn = 'off';
+    } */
     if( message.turn === "on" ){
+        console.log('Dark!!');
         for(by of body){
             by.style['background'] = '#000000';
             by.style['color'] = ' #ffffff';
@@ -19,8 +27,9 @@ function extensionRun(message, sender, sendResponse){
             p.style['background-color'] = ' #000000 '; 
             p.style['color'] = '#ffffff';
         }
-    }else
+    }else if(message.turn === "off")
     {
+        console.log('Light!!');
         var i;
         for(i = 0; i < paras.length; i++){
             paras[i].style = tp[i].style;
@@ -29,4 +38,5 @@ function extensionRun(message, sender, sendResponse){
             body[i].style = tb[i].style;
         }
     }
+    console.log(by.style['background']);
 }
