@@ -8,7 +8,6 @@ function changeMode(tab) {
         turn: "on"
     };
     if (extensionRun1 % 2 === 1) {
-        console.log(extensionRun1);
         swtch.turn = "off";
     } else {
         swtch.turn = "on";
@@ -29,20 +28,11 @@ function buttonClicked(tab){
     changeMode(tab);
 }
 
-chrome.commands.onCommand.addListener(function (command,tab) {
+chrome.commands.onCommand.addListener(function (command) {
     if (command === 'toggle') {
         console.log(command,' command entered');
-        //changeMode(tab);
-        let swtch = {
-            turn: "on"
-        };
-        if (extensionRun1 % 2 === 1) {
-            console.log(extensionRun1);
-            swtch.turn = "off";
-        } else {
-            swtch.turn = "on";
-        }
-        /* chrome.tabs.sendMessage(swtch); */
-        extensionRun1 += 1;
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            changeMode(tabs[0]);
+        });   
     }
 });
