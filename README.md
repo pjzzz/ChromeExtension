@@ -1,4 +1,15 @@
 # ChromeExtension
+Extension to change any webpage to dark mode
+
+How to install
+-fork this repository.
+-open chrome://extensions in chrome
+-enable developer mode 
+-click on Load Unpacked
+-select the forked repository "ChromeExtension" folder
+-chrome extension is installed!!
+-if you just want to install this extension you can drag drop the ChromeExtension.crx file
+ on chrome://extensions page
 
 Objectives
 -First to change the color of the background
